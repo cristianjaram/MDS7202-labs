@@ -1,8 +1,8 @@
-# Ignorar carpeta videos
-videos/
+# Ignorar la carpeta videos dentro de lab1
+lab1/videos/
 
-# Ignorar todos los archivos .txt
+# Ignorar todos los archivos .txt en cualquier lugar
 *.txt
 
-# Excepción para un archivo específico
-!texts/171.txt
+# Excepción para el archivo específico dentro de lab1/texts
+!lab1/texts/171.txt
