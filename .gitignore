@@ -1,6 +1,9 @@
 # Ignorar todos los archivos dentro de lab1/videos
-lab1/videos/
+labs/Lab1/data/videos/
+labs/Lab1/data/texts/
 
+labs/Lab2/images_lab/
+labs/Lab2/secuencia_plaza/
 # Ignorar todos los archivos dentro de lab1/texts
 lab1/texts/*.txt
 
