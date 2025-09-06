@@ -4,8 +4,14 @@ labs/Lab1/data/texts/
 
 labs/Lab2/images_lab/
 labs/Lab2/secuencia_plaza/
+
+labs/Lab3/*.parquet
+labs/Lab3/*.pickle
+
+
 # Ignorar todos los archivos dentro de lab1/texts
 lab1/texts/*.txt
 
 # Para no ignorar algún archivo específico, usa el signo de exclamación:
 !lab1/texts/171.txt
+
