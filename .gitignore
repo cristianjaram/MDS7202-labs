@@ -8,6 +8,9 @@ labs/Lab2/secuencia_plaza/
 labs/Lab3/*.parquet
 labs/Lab3/*.pickle
 
+labs/Lab4/*.parquet
+labs/Lab4/*.pickle
+
 proyecto_lab/*.parquet
 
 # Ignorar todos los archivos dentro de lab1/texts
