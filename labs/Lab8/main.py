@@ -10,10 +10,8 @@
 # from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 # from xgboost import XGBClassifier
 
-# # Load dataset
 # df = pd.read_csv("water_potability.csv")
 
-# # Preprocess data
 # X = df.drop("Potability", axis=1)
 # y = df["Potability"]
 
@@ -26,14 +24,13 @@
 #     ("model", XGBClassifier(use_label_encoder=False, eval_metric='logloss'))
 # ])
 
-# #ENTRENAMIENTO Y TRACKING
 # mlflow.set_experiment("XGBoost_Base")
 # mlflow.autolog()  # Habilitar autologging
 # with mlflow.start_run(run_name ="XGBoost Base Run"):
 #     pipeline.fit(X_train, y_train)
 #     y_pred = pipeline.predict(X_test)
 
-#     # Evaluar el modelo
+#    
 #     accuracy = accuracy_score(y_test, y_pred)
 #     f1 = f1_score(y_test, y_pred)
 #     precision = precision_score(y_test, y_pred)
@@ -50,24 +47,15 @@ from pydantic import BaseModel
 import pickle
 import numpy as np
 
-# ==============================
-# CARGA DEL MODELO ENTRENADO
-# ==============================
 with open("models/best_xgboost_model.pkl", "rb") as f:
     model = pickle.load(f)
 
-# ==============================
-# DEFINICIÓN DE LA APLICACIÓN
-# ==============================
 app = FastAPI(
     title="API de Potabilidad del Agua",
     description="Modelo de Machine Learning basado en XGBoost que predice si el agua es potable o no, a partir de mediciones químicas obtenidas por sensores (features del modelo)",
     version="1.0"
 )
 
-# ==============================
-# ESQUEMA DE ENTRADA (Pydantic)
-# ==============================
 class WaterSample(BaseModel):
     ph: float
     Hardness: float
@@ -79,9 +67,6 @@ class WaterSample(BaseModel):
     Trihalomethanes: float
     Turbidity: float
 
-# ==============================
-# RUTAS
-# ==============================
 @app.get("/")
 def home():
     return {
@@ -99,9 +84,6 @@ def predict_potability(sample: WaterSample):
     pred = model.predict(features)[0]
     return {"potabilidad": int(pred)}
 
-# ==============================
-# EJECUCIÓN LOCAL
-# ==============================
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

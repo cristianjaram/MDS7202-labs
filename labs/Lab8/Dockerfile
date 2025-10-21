@@ -1,19 +1,19 @@
-# Imagen base de Python
+# base de Python
 FROM python:3.12-slim
 
-# Establecer directorio de trabajo dentro del contenedor
+# directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar archivos necesarios al contenedor
+# copiar archivos necesarios al contenedor
 COPY requirements.txt .
 
-# Instalar dependencias
+# dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el resto del proyecto
+# Copiar resto de proyecto
 COPY . .
 
-# Exponer el puerto donde corre la API
+# puerto donde corre la API
 EXPOSE 8000
 
 # Comando por defecto para levantar el servidor FastAPI
