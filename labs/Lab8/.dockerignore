@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.log
+*.csv
+mlruns/
+plots/
+optuna/
+*.ipynb
+.DS_Store
+venv/
+.env
