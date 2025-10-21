@@ -19,3 +19,4 @@ lab1/texts/*.txt
 # Para no ignorar algún archivo específico, usa el signo de exclamación:
 !lab1/texts/171.txt
 
+labs/Lab8/
