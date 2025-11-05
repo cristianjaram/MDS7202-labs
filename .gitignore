@@ -23,3 +23,5 @@ labs/Lab8/mlruns/
 labs/Lab8/models/
 labs/Lab8/plots/
 labs/Lab8/*.csv
+
+labs/Lab9/*.csv
