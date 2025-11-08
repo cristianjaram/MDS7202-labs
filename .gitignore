@@ -25,3 +25,11 @@ labs/Lab8/plots/
 labs/Lab8/*.csv
 
 labs/Lab9/*.csv
+labs/Lab9/*.html
+labs/Lab9/*.json
+labs/Lab9/dags/raw/*.csv
+
+
+#ignorar cualquier archivo .parquet o .pickle em proyecto lab o cualquier carpeta dentro
+proyecto_lab/**/*.parquet
+proyecto_lab/**/*.pickle
