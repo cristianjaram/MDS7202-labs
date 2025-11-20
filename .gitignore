@@ -33,3 +33,9 @@ labs/Lab9/dags/raw/*.csv
 #ignorar cualquier archivo .parquet o .pickle em proyecto lab o cualquier carpeta dentro
 proyecto_lab/**/*.parquet
 proyecto_lab/**/*.pickle
+
+#ignorar cualquier archivo .log en proyecto lab o cualquier carpeta dentro
+proyecto_lab/**/*.log
+
+#ignorar cualquier png
+*.png

@@ -1,0 +1,11 @@
+{
+  "total_predictions": 169860,
+  "positive_predictions": "5353",
+  "negative_predictions": "164507",
+  "avg_probability": 0.16343352548441847,
+  "prediction_date": "2025-01-12",
+  "unique_customers": 1490,
+  "unique_products": 114,
+  "prediction_file": "predicciones_2025_01_12.parquet",
+  "threshold_used": 0.43999999999999984
+}

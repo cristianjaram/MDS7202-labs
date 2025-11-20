@@ -1,0 +1,23 @@
+{
+  "model_path": "/opt/airflow/models/modelo_final.pkl",
+  "optimal_threshold": 0.43999999999999984,
+  "metrics": {
+    "f1_weighted": 0.8646470163324499,
+    "f1_class1": 0.5025947797632743,
+    "roc_auc": 0.7807698007547292,
+    "pr_auc": 0.49315894007036204
+  },
+  "best_params": {
+    "scaler": "minmax",
+    "num_leaves": 200,
+    "max_depth": 15,
+    "learning_rate": 0.09792583902585257,
+    "n_estimators": 103,
+    "min_child_samples": 96,
+    "subsample": 0.8536820579462179,
+    "colsample_bytree": 0.638808356781822,
+    "reg_alpha": 1.174127007570085,
+    "reg_lambda": 0.4368883842360724
+  },
+  "training_date": "2025-11-19T18:03:49.426352"
+}
