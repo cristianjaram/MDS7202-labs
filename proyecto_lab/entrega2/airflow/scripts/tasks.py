@@ -21,6 +21,7 @@ from .prediction import (
     prepare_prediction_data, generate_predictions, summarize_predictions,
     save_predictions, get_next_week_date
 )
+from .export_csv import export_positive_predictions_to_csv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'data')
@@ -266,3 +267,32 @@ def generate_predictions_task(**kwargs):
     ti.xcom_push(key='prediction_summary', value=summary)
 
     return summary
+
+
+def export_predictions_csv(**kwargs):
+    """Exporta predicciones positivas a CSV sin headers."""
+    ti = kwargs['ti']
+
+    csv_path = export_positive_predictions_to_csv(
+        predictions_dir=DATA_DIR,
+        output_path=os.path.join(DATA_DIR, 'predicciones_positivas.csv')
+    )
+
+    # Verificar el archivo generado
+    import pandas as pd
+    csv_data = pd.read_csv(csv_path, header=None, names=['empresa', 'producto'])
+
+    export_info = {
+        'csv_path': csv_path,
+        'total_rows': len(csv_data),
+        'unique_customers': csv_data['empresa'].nunique(),
+        'unique_products': csv_data['producto'].nunique(),
+        'export_date': datetime.now().isoformat()
+    }
+
+    ti.xcom_push(key='export_info', value=export_info)
+
+    print(f"CSV exportado exitosamente: {csv_path}")
+    print(f"Total de predicciones positivas: {export_info['total_rows']}")
+
+    return export_info

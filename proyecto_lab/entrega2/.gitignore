@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Airflow
+airflow/logs/
+airflow/mlruns/
+airflow/plugins/__pycache__/
+
+# Datos generados (pueden ser regenerados)
+airflow/data/dataset_transformed.parquet
+airflow/data/predicciones_*.parquet
+airflow/data/predicciones_positivas.csv
+airflow/data/historical_stats.json
+airflow/data/latest_prediction_summary.json
+airflow/data/shap_summary.png
+
+# Modelos generados (pueden ser regenerados)
+airflow/models/modelo_final.pkl
+airflow/models/model_info.json
+
+# Environment files
+.env
+.env.local
+
+# Docker
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.bak
+*.log

@@ -39,3 +39,13 @@ proyecto_lab/**/*.log
 
 #ignorar cualquier png
 *.png
+
+*.csv
+
+*.zip
+
+*.pyc
+
+*.json
+*.log
+

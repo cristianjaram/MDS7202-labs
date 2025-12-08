@@ -13,7 +13,8 @@ from scripts.tasks import (
     transform_data,
     detect_drift,
     retrain_model,
-    generate_predictions_task
+    generate_predictions_task,
+    export_predictions_csv
 )
 
 default_args = {
@@ -71,8 +72,13 @@ with DAG(
         python_callable=generate_predictions_task,
     )
 
+    export_csv = PythonOperator(
+        task_id='export_csv',
+        python_callable=export_predictions_csv,
+    )
+
     end = EmptyOperator(task_id='end')
 
     start >> extract >> transform >> check_drift
     check_drift >> [retrain, skip_retrain]
-    [retrain, skip_retrain] >> join >> predict >> end
+    [retrain, skip_retrain] >> join >> predict >> export_csv >> end
